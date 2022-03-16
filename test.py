@@ -2,30 +2,6 @@ import socket
 import numpy as np
 from PIL import Image
 
-img_data = Image.open('montagne.jpg')
-img_arr = np.array(img_data)
-
-
-
-z =  len(img_arr)
-
-
-for i in img_arr.shape[1::-1]: # img.shape -> (width,height,channel)
-
-    if(i%2 == 0):
-
-    	msgFromServer= "pair"
-
-	
-
-
-    else:
-
-        msgFromServer= "impair"
-
-
-
-
  
 
 localIP     = "10.27.0.40"
@@ -36,7 +12,7 @@ bufferSize  = 1024
 
  
 
-bytesToSend         = str.encode(msgFromServer)
+
 
  
 
@@ -65,6 +41,31 @@ while(True):
     message = bytesAddressPair[0]
 
     address = bytesAddressPair[1]
+
+    img_data = Image.open(message)
+    img_arr = np.array(img_data)
+
+    z =  len(img_arr)
+
+
+    for i in img_arr.shape[1::-1]:
+     # img.shape -> (width,height,channel)
+
+        if(i%2 == 0):
+            msgFromServer= "pair"
+
+        else:
+
+            msgFromServer= "impair"
+
+
+    bytesToSend = str.encode(msgFromServer)
+
+
+    
+
+
+
 
     clientMsg = "Message from Client:{}".format(message)
     clientIP  = "Client IP Address:{}".format(address)
