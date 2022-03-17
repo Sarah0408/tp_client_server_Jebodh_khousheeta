@@ -16,8 +16,10 @@ Pour executer le script dans le server on utilise la commande:
 et pour executer le script dans le cleint on utilise la commande:
 -python3 test2.py
 
-## UDP
-User Datagram Protocal(UDP)est un protocole de communication utilisé sur Internet pour les transmissions particulièrement sensibles au temps telles que la lecture vidéo ou les requêtes DNS. he. Il accélère la communication en n’établissant pas formellement une connexion avant le transfert des données.
+## TCP
+TCP signifie Transmission Control Protocol une norme de communication qui permet aux programmes d’application et aux appareils informatiques d’échanger des messages sur un réseau.
+
+Il est conçu pour envoyer des paquets sur Internet et assurer la livraison réussie des données et des messages sur les réseaux.
 
 Le test.py doit etre dans le serveur et avec l'adresse ip du server tandis que le test2.py doit etre dans le client mais avec l'adresse ip du serveurEt pour changer l’adresse IP du script, il faut changer le port serveraddressport
 les scripts aident à faire des communications entre le serveur et le client.
